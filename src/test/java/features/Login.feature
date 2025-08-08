@@ -7,4 +7,4 @@ Feature: Login functionality
     And user enters the OTP
     When user taps on continue button
     Then  user should be redirected to dashboard
-   # And user logoff
+
