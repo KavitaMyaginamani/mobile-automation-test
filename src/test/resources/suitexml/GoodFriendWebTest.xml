@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Method">
+
+    <classes>
+      <class name="com.kinship.automation.testcases.web.VerifyGoodFriendTest"/>
+      <class name="com.kinship.automation.testcases.web.BookingRequestTestForPetParent"/>
+      <class name="com.kinship.automation.testcases.web.CancelBookAppointmentForPetParent"/>
+      <class name="com.kinship.automation.testcases.web.AddPaymentMethodForPetParent"/>
+      <class name="com.kinship.automation.testcases.web.ViewBookedAppointAndConfirmForProvider"/>
+      <class name="com.kinship.automation.testcases.web.SearchToolbarEditSearch"/>
+      <class name="com.kinship.automation.testcases.web.BusinessOwnerRegistrationPageValidationTest"/>
+      <class name="com.kinship.automation.testcases.web.GoodFriendFaceBookFooter"/>
+      <class name="com.kinship.automation.testcases.web.GoodFriendInstagramFooter"/>
+      <class name="com.kinship.automation.testcases.web.SuccessfullyRepeatBasicHeaderNavigationTestonTheFollowingPages"/>
+      <class name="com.kinship.automation.testcases.web.TestCookiesPolicyFooter"/>
+      <class name="com.kinship.automation.testcases.web.TestPrivacyPolicyFooter"/>
+      <class name="com.kinship.automation.testcases.web.TestTermsOfServiceFooter"/>
+      <class name="com.kinship.automation.testcases.web.VerifyAddingNewBusinessWithInvalidFirstNameLastName"/>
+      <class name="com.kinship.automation.testcases.web.ProviderWebsitePhoneNumberValidation"/>
+      <class name="com.kinship.automation.testcases.web.DeleteAStaffMember"/>
+      <class name="com.kinship.automation.testcases.web.EditBusinessProfile"></class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+

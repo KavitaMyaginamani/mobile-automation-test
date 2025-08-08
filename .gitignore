@@ -1,0 +1,22 @@
+.idea/
+*.iml
+out/
+build/
+.gradle/
+*.log
+*.class
+.DS_Store
+# Ignore IDE/project config files
+#.idea/
+.classpath
+.project
+.settings/
+
+# Ignore build artifacts
+target/
+test-output/
+
+# Logs and temp files
+#*.log
+*.tmp
+*.swp
