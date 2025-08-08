@@ -11,7 +11,6 @@ import org.openqa.selenium.support.PageFactory;
 public class OtpVerificationScreen implements OtpVerification {
 
   protected AppiumDriver appiumDriver;
-  //  protected AndroidDriver androidDriver;
   protected AppiumHelper appiumHelper;
   private String otpScreen = "//android.widget.TextView[@text='OTP Verification']";
   private final String otpBox1 = "";

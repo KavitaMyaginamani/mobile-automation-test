@@ -110,12 +110,4 @@ public class LocalMobileFactory {
   public static final AppiumDriver getDriver() {
     return driverMap.get(FrameworkConfigFactory.getConfig().platform()).get();
   }
-
-  //    public static AppiumDriver getDriver(MobileDriverType type) {
-  //        return driverMap.get(type).get();
-  //    }
-  //    public static AppiumDriver getDriver() {
-  //        return getDriver(MobileDriverType.LOCAL);
-  //    }
-
 }
