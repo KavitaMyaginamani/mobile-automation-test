@@ -38,4 +38,48 @@ public class LoginSteps {
     String password = getValuesFromPropertiesFile("testdata", "password");
     login.login(username, password);
   }
-}
+
+  @When("^the user enters (.*) username and (.*) password$")
+        public void enterUsernameAndPassword(String usernameStatus, String passwordStatus) {
+            String username;
+            String password;
+
+            switch (usernameStatus.toLowerCase()) {
+                case "valid":
+                    username = getValuesFromPropertiesFile("testdata", "validUser");
+                    break;
+                case "invalid":
+                    username = getValuesFromPropertiesFile("testdata", "invalidUser");
+                    break;
+                default:
+                    throw new IllegalArgumentException("Invalid username status: " + usernameStatus);
+            }
+
+            switch (passwordStatus.toLowerCase()) {
+                case "valid":
+                    password = getValuesFromPropertiesFile("testdata", "validPass");
+                    break;
+                case "invalid":
+                    password = getValuesFromPropertiesFile("testdata", "invalidPass");
+                    break;
+                default:
+                    throw new IllegalArgumentException("Invalid password status: " + passwordStatus);
+            }
+            login.login(username, password);
+        }
+
+    @Then("^the user should see the appropriate error message$")
+    public void the_user_should_see_the_appropriate_error_message() {
+     String actual = login.getErrorMessage();
+     String expected = "Invalid credentials";
+     String reasonForFailure = "error message is not displayed.";
+     Assert.assertEquals(actual, expected, reasonForFailure);
+  }
+
+  @When("^the user restarts the app$")
+    public void the_user_restarts_the_app() {
+      login.restartApp();
+  }
+
+    }
+

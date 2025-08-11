@@ -5,4 +5,8 @@ public interface Login {
   boolean isVisble(int timeoutInSeconds);
 
   void login(String username, String password);
+
+  String getErrorMessage();
+
+  void restartApp();
 }

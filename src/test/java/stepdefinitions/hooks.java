@@ -13,26 +13,23 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 public class hooks {
-  private TestDriver testDriver;
-  private GoodFriendBasePage goodFriendBasePage;
+
   private AppiumHelper appiumHelper;
+  private static final String APP_PACKAGE = "com.example.dummyinvestmentbankingapp";
 
   @Before
   public void setUp(Scenario scenario) {
     KinshipDriver.getInstance().setUpMobileDriver();
-    //  KinshipDriver.getInstance().setUpMobileDriver();
     AppiumDriver appiumDriver = MobileDriverManager.getDriver();
-    //  WebDriver driver = DriverManager.getDriver();
+
     // You must manually initialize this because TestNG annotations won't run
     appiumHelper = new AppiumHelper(appiumDriver);
-    // testDriver = new TestDriver(appiumDriver);
-    //  goodFriendBasePage = new GoodFriendBasePage(testDriver);
   }
+
 
   @After
   public void tearDown(Scenario scenario) {
 
-    //	WebDriver driver = DriverManager.getDriver();
     AppiumDriver driver = MobileDriverManager.getDriver();
     if (driver != null && driver instanceof TakesScreenshot) {
       byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
