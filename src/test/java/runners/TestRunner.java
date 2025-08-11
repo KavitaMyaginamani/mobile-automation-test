@@ -17,6 +17,7 @@ import org.testng.annotations.Listeners;
       "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
     }, // file for failed reruns (optional),
     monochrome = true,
-    dryRun = false)
+    dryRun = false,
+    tags = "@smoke")
 @Listeners({TestListener.class, RetryListener.class})
 public class TestRunner extends AbstractTestNGCucumberTests {}
