@@ -43,7 +43,7 @@ public class LocalMobileFactory {
         //  cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Medium Phone API 36.0");
         cap.setCapability(
             "app",
-            "C:/Users/kavit/IdeaProjects/goodfriend-qa-automation-cucumber/bundle-to-test/android/CIB-debug.apk");
+            "C:/Users/kavit/mobile-automation-test/bundle-to-test/android/CIB-debug.apk");
         //  cap.setCapability("appiumVersion","1.17.1");
         //  cap.setCapability("autoAcceptAlerts",true);
         //   cap.setCapability("autoGrantPermissions",true);
