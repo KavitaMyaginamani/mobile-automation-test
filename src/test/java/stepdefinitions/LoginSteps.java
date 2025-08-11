@@ -28,9 +28,8 @@ public class LoginSteps {
     otpVerification = new OtpVerificationScreen(appiumDriver, new AppiumHelper(appiumDriver));
   }
 
-  @Given("user is on login page")
-  @Feature("Test to Add payment Method for Pet Parent")
-  public void user_is_on_login_page() {
+  @Given("user is on the login page")
+  public void user_is_on_the_login_page() {
    log.info("Navigating to login page... ");
     boolean actual = login.isVisble(40);
     String reasonForFailure = "Login page is not visible.";
