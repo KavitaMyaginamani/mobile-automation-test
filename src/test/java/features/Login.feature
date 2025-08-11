@@ -10,7 +10,7 @@ Feature: Login functionality
     And the user restarts the app
 
   @smoke
-  Scenario Outline: Display error message for invalid username input
+  Scenario Outline: Verify error message for invalid credentials
     Given user is on the login page
     When the user enters <username_status> username and <password_status> password
     Then the user should see the appropriate error message
