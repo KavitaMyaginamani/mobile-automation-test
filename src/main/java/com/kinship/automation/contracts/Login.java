@@ -6,7 +6,19 @@ public interface Login {
 
   void login(String username, String password);
 
+  void enterPassword(String password);
+
+  boolean isPasswordMasked();
+
+  void clickEyeIcon();
+
+  boolean isPasswordVisible();
+
   String getErrorMessage();
+
+  boolean isRegisterLinkDisplayed();
+
+  void clickRegisterLink();
 
   void restartApp();
 }

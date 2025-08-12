@@ -31,7 +31,7 @@ public class LocalMobileFactory {
         DesiredCapabilities cap = new DesiredCapabilities();
         // cap.setCapability("device-orientation", "portrait");
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
-        cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "15");
+        cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "16");
         cap.setCapability("automationName", "uiautomator2");
         cap.setCapability("appPackage", FrameworkConfigFactory.getConfig().appPackage());
         cap.setCapability("appActivity", FrameworkConfigFactory.getConfig().appActivity());
@@ -39,8 +39,8 @@ public class LocalMobileFactory {
         cap.setCapability(MobileCapabilityType.NO_RESET, true);
         // cap.setCapability("unicodeKeyboard", true);
         cap.setCapability("newCommandTimeout", FrameworkConfigFactory.getConfig().mobileTimeout());
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME, "OnePlus Nord CE3 5G");
-        //  cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Medium Phone API 36.0");
+        //cap.setCapability(MobileCapabilityType.DEVICE_NAME, "OnePlus Nord CE3 5G");
+          cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Medium Phone API 36.0");
         cap.setCapability(
             "app",
             "C:/Users/kavit/mobile-automation-test/bundle-to-test/android/CIB-debug.apk");
