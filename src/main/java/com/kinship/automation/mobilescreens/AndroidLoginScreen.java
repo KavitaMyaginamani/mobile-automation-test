@@ -26,6 +26,8 @@ public class AndroidLoginScreen implements Login {
       "//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.widget.EditText[2]";
   private String loginButton = "//android.widget.TextView[@text='LOGIN']";
   private String errorMessage = "//android.widget.Toast";
+  private String registerlink = "//android.widget.TextView[@text='Register']";
+  private String clickEyeIcon ="//android.view.View[@content-desc='Show password']";
 
   public AndroidLoginScreen(AppiumDriver appiumDriver, AppiumHelper appiumHelper) {
     this.appiumDriver = appiumDriver;
@@ -46,6 +48,32 @@ public class AndroidLoginScreen implements Login {
   }
 
   @Override
+  public void enterPassword(String password) {
+    appiumDriver.findElement(By.xpath(passwordField)).sendKeys(password);
+  }
+
+  @Override
+  public boolean isPasswordMasked() {
+    String type = appiumDriver.findElement(By.xpath(passwordField)).getAttribute("Password");
+    // In Android, "password" attribute is true if masked
+    System.out.println(type);
+    return Boolean.parseBoolean(type);
+  }
+
+  @Override
+  public void clickEyeIcon() {
+    appiumDriver.findElement(By.xpath(clickEyeIcon)).click();
+
+  }
+
+  @Override
+  public boolean isPasswordVisible() {
+    String type = appiumDriver.findElement(By.xpath(passwordField)).getAttribute("Password");
+    System.out.println(type);
+    return !Boolean.parseBoolean(type);
+  }
+
+  @Override
   public String getErrorMessage() {
     try {
       // Use polling wait to avoid StaleElementReferenceException
@@ -63,6 +91,17 @@ public class AndroidLoginScreen implements Login {
       System.out.println("Toast not found: " + e.getMessage());
       return "";
     }
+  }
+
+  @Override
+  public boolean isRegisterLinkDisplayed() {
+    return appiumHelper.isElementVisible(By.xpath(registerlink),0);
+  }
+
+  @Override
+  public void clickRegisterLink() {
+    appiumDriver.findElement(By.xpath(registerlink)).click();
+
   }
 
   @Override

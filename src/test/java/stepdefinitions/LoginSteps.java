@@ -24,6 +24,7 @@ public class LoginSteps {
   }
 
   @Given("user is on the login page")
+  @Then("the Login Page should be displayed")
   public void user_is_on_the_login_page() {
    log.info("Navigating to login page... ");
     boolean actual = login.isVisble(40);
@@ -81,5 +82,41 @@ public class LoginSteps {
       login.restartApp();
   }
 
+  @Then("^user sees Register Link on the Login page$")
+    public void user_sees_Register_Link_on_the_Login_page() {
+     boolean actual = login.isRegisterLinkDisplayed();
+     boolean expected = true;
+     Assert.assertEquals(actual, expected, "Register link is not displayed.");
+  }
+
+  @When("^the user clicks on Register link$")
+    public void the_user_clicks_on_Register_link() {
+      login.clickRegisterLink();
+  }
+
+  @When("the user enters a password in the password field")
+    public void the_user_enters_a_Password_in_the_password_field() {
+      String password = getValuesFromPropertiesFile("testdata", "password");
+      login.enterPassword(password);
+  }
+
+  @Then("the password should be masked")
+    public void the_password_should_be_masked() {
+      boolean actual = login.isPasswordMasked();
+      boolean expected = true;
+      Assert.assertEquals(actual, expected, "Password shown is not masked.");
+  }
+
+  @When("the user clicks the eye icon")
+    public void the_user_clicks_the_eye_icon() {
+      login.clickEyeIcon();
+  }
+
+  @Then("the password should be visible")
+    public void the_password_should_be_visible() {
+      boolean actual = login.isPasswordVisible();
+      boolean expected = true;
+      Assert.assertEquals(actual, expected, "Password visible is not visible");
+  }
     }
 
